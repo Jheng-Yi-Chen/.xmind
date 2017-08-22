@@ -932,6 +932,71 @@ P6A$P6Q24_rank5[P6A$P6Q24_Snow == "5"] <- "7"
 P6A$P6Q24_rank6[P6A$P6Q24_Snow == "6"] <- "7"
 P6A$P6Q24_rank7[P6A$P6Q24_Snow == "7"] <- "7"
 
+##################################################
+# test
+
+P6A$P6Q24_rank1[P6A$ID6 == "1100"]
+P6A$P6Q24_rank2[P6A$ID6 == "1100"]
+P6A$P6Q24_rank3[P6A$ID6 == "1100"]
+P6A$P6Q24_rank4[P6A$ID6 == "1100"]
+P6A$P6Q24_rank5[P6A$ID6 == "1100"]
+P6A$P6Q24_rank6[P6A$ID6 == "1100"]
+P6A$P6Q24_rank7[P6A$ID6 == "1100"]
+
+P6A$P6Q27_rank1[P6A$ID6 == "1100"]
+P6A$P6Q27_rank2[P6A$ID6 == "1100"]
+P6A$P6Q27_rank3[P6A$ID6 == "1100"]
+P6A$P6Q27_rank4[P6A$ID6 == "1100"]
+P6A$P6Q27_rank5[P6A$ID6 == "1100"]
+P6A$P6Q27_rank6[P6A$ID6 == "1100"]
+P6A$P6Q27_rank7[P6A$ID6 == "1100"]
+P6A$P6Q27_rank8[P6A$ID6 == "1100"]
+P6A$P6Q27_rank9[P6A$ID6 == "1100"]
+P6A$P6Q27_rank10[P6A$ID6 == "1100"]
+
+P6A$P6Q26_Nestle[P6A$ID6 == "1100"]
+P6A$P6Q26_Wyeth[P6A$ID6 == "1100"]
+P6A$P6Q26_MJN[P6A$ID6 == "1100"]
+P6A$P6Q26_Abbott[P6A$ID6 == "1100"]
+P6A$P6Q26_Meiji[P6A$ID6 == "1100"]
+P6A$P6Q26_Quaker[P6A$ID6 == "1100"]
+P6A$P6Q26_Snow[P6A$ID6 == "1100"]
+P6A$P6Q26_Karihome[P6A$ID6 == "1100"]
+P6A$P6Q26_Babecare[P6A$ID6 == "1100"]
+P6A$P6Q26_Neoangelac[P6A$ID6 == "1100"]
+
+P6A$P6Q24_rank1[P6A$ID6 == "16167"]
+P6A$P6Q24_rank2[P6A$ID6 == "16167"]
+P6A$P6Q24_rank3[P6A$ID6 == "16167"]
+P6A$P6Q24_rank4[P6A$ID6 == "16167"]
+P6A$P6Q24_rank5[P6A$ID6 == "16167"]
+P6A$P6Q24_rank6[P6A$ID6 == "16167"]
+P6A$P6Q24_rank7[P6A$ID6 == "16167"]
+
+P6A$P6Q27_rank1[P6A$ID6 == "16167"]
+P6A$P6Q27_rank2[P6A$ID6 == "16167"]
+P6A$P6Q27_rank3[P6A$ID6 == "16167"]
+P6A$P6Q27_rank4[P6A$ID6 == "16167"]
+P6A$P6Q27_rank5[P6A$ID6 == "16167"]
+P6A$P6Q27_rank6[P6A$ID6 == "16167"]
+P6A$P6Q27_rank7[P6A$ID6 == "16167"]
+P6A$P6Q27_rank8[P6A$ID6 == "16167"]
+P6A$P6Q27_rank9[P6A$ID6 == "16167"]
+P6A$P6Q27_rank10[P6A$ID6 == "16167"]
+
+P6A$P6Q26_Nestle[P6A$ID6 == "16167"]
+P6A$P6Q26_Wyeth[P6A$ID6 == "16167"]
+P6A$P6Q26_MJN[P6A$ID6 == "16167"]
+P6A$P6Q26_Abbott[P6A$ID6 == "16167"]
+P6A$P6Q26_Meiji[P6A$ID6 == "16167"]
+P6A$P6Q26_Quaker[P6A$ID6 == "16167"]
+P6A$P6Q26_Snow[P6A$ID6 == "16167"]
+P6A$P6Q26_Karihome[P6A$ID6 == "16167"]
+P6A$P6Q26_Babecare[P6A$ID6 == "16167"]
+P6A$P6Q26_Neoangelac[P6A$ID6 == "16167"]
+
+##################################################
+
 # P6A[ , c("P6Q24_Nestle", "P6Q24_Wyeth", "P6Q24_MJN", "P6Q24_Abbott", "P6Q24_Meiji", "P6Q24_Quaker", "P6Q24_Snow")]
 # P6A[order(P6A[, c("P6Q24_Nestle", "P6Q24_Wyeth", "P6Q24_MJN", "P6Q24_Abbott", "P6Q24_Meiji", "P6Q24_Quaker", "P6Q24_Snow")], decreasing = TRUE), ]
 # A[order(A[,4],decreasing=T),]
@@ -1052,6 +1117,15 @@ P6B$P6Q26_Snow
 P6B$P6Q26_Karihome
 P6B$P6Q26_Babecare
 P6B$P6Q26_Neoangelac
+
+##################################################
+
+P6A$P6Q26_Nestle_Rank <- rank(P6A[, c("P6Q26_Nestle", "P6Q26_Wyeth", "P6Q26_MJN", "P6Q26_Abbott", "P6Q26_Meiji", "P6Q26_Quaker", "P6Q26_Snow", "P6Q26_Karihome", "P6Q26_Babecare", "P6Q26_Neoangelac")])
+                                  
+apply(P6A[, c("P6Q26_Nestle", "P6Q26_Wyeth", "P6Q26_MJN", "P6Q26_Abbott", "P6Q26_Meiji", "P6Q26_Quaker", "P6Q26_Snow", "P6Q26_Karihome", "P6Q26_Babecare", "P6Q26_Neoangelac")], 1, function(x) rank(x))
+
+
+P6B$P6Q26_Nestle_Rank <- 
 
 ##################################################
 
@@ -1383,20 +1457,24 @@ P6B$EndDay6 <- gsub("-", "/", P6B$EndDay6); P6B$EndDay6
 
 ##################################################
 
-P6A$Month6
-P6B$Month6
+P6A$Month6 <- "6"
+P6B$Month6 <- "6"
 
-P6A$GETENDDAY6
-P6B$GETENDDAY6
+P6A$GETENDDAY6 <- as.Date("2017/05/31", format = "%Y/%m/%d")
+P6A$GETENDDAY6 <- gsub("-", "/", P6A$GETENDDAY6); P6A$GETENDDAY6
+
+P6B$GETENDDAY6 <- as.Date("2017/05/31", format = "%Y/%m/%d")
+P6B$GETENDDAY6 <- gsub("-", "/", P6B$GETENDDAY6); P6B$GETENDDAY6
+
+##################################################
 
 P6A$MemberDay
 P6B$MemberDay
 
+##################################################
+
 P6A$P6Q27_1
 P6B$P6Q27_1
-
-P6A$P6Q26_Nestle_Rank
-P6B$P6Q26_Nestle_Rank
 
 P6A$NP6Q26_Nestle_Rank
 P6B$NP6Q26_Nestle_Rank
