@@ -1,8 +1,6 @@
 
 ##################################################
 #               nestle file recode and merging   #
-#               Jheng Yi Chen                    #
-#               August, 2017                     #
 ##################################################
 
 ##################################################
@@ -1120,10 +1118,17 @@ P6B$P6Q26_Neoangelac
 
 ##################################################
 
-P6A$P6Q26_Nestle_Rank <- rank(P6A[, c("P6Q26_Nestle", "P6Q26_Wyeth", "P6Q26_MJN", "P6Q26_Abbott", "P6Q26_Meiji", "P6Q26_Quaker", "P6Q26_Snow", "P6Q26_Karihome", "P6Q26_Babecare", "P6Q26_Neoangelac")])
-                                  
-apply(P6A[, c("P6Q26_Nestle", "P6Q26_Wyeth", "P6Q26_MJN", "P6Q26_Abbott", "P6Q26_Meiji", "P6Q26_Quaker", "P6Q26_Snow", "P6Q26_Karihome", "P6Q26_Babecare", "P6Q26_Neoangelac")], 1, function(x) rank(x))
+rank <- apply(P6A[, c("P6Q26_Nestle", "P6Q26_Wyeth", "P6Q26_MJN", "P6Q26_Abbott", "P6Q26_Meiji", "P6Q26_Quaker", "P6Q26_Snow", "P6Q26_Karihome", "P6Q26_Babecare", "P6Q26_Neoangelac")], 1, function(x) rank(x))
+P6A$P6Q26_Nestle_Rank 
+P6A[1:dim(P6A)[1], c("P6Q26_Nestle", "P6Q26_Wyeth", "P6Q26_MJN", "P6Q26_Abbott", "P6Q26_Meiji", "P6Q26_Quaker", "P6Q26_Snow", "P6Q26_Karihome", "P6Q26_Babecare", "P6Q26_Neoangelac")]
 
+for(i in (1:dim(P6A)[1])){
+  rank26 <- P6A[i, c("P6Q26_Nestle", "P6Q26_Wyeth", "P6Q26_MJN", "P6Q26_Abbott", "P6Q26_Meiji", "P6Q26_Quaker", "P6Q26_Snow", "P6Q26_Karihome", "P6Q26_Babecare", "P6Q26_Neoangelac")] %>%
+    rank() %>% 
+    as.data.frame()
+}
+
+rank(P6A[4, c("P6Q26_Nestle", "P6Q26_Wyeth", "P6Q26_MJN", "P6Q26_Abbott", "P6Q26_Meiji", "P6Q26_Quaker", "P6Q26_Snow", "P6Q26_Karihome", "P6Q26_Babecare", "P6Q26_Neoangelac")])
 
 P6B$P6Q26_Nestle_Rank <- 
 
@@ -1996,8 +2001,8 @@ P5B$P5Q18
 # P5A$ID6
 # P5B$ID6
 
-P5A$ID6 <- P5A$MemberID6
-P5B$ID6 <- P5B$MemberID6
+P5A$ID5 <- P5A$MemberID5
+P5B$ID5 <- P5B$MemberID5
 
 ##################################################
 
@@ -2810,11 +2815,16 @@ P5B$EndDay5 <- gsub("-", "/", P5B$EndDay5); P5B$EndDay5
 
 ##################################################
 
-P5A$Month5
-P5B$Month5
+P5A$Month5 <- "5"
+P5B$Month5 <- "5"
 
-P5A$GETENDDay5
-P5B$GETENDDay5
+P5A$GETENDDay5 <- as.Date("2017/04/30", format = "%Y/%m/%d")
+P5A$GETENDDay5 <- gsub("-", "/", P5A$GETENDDay5); P5A$GETENDDay5
+
+P5B$GETENDDay5 <- as.Date("2017/04/30", format = "%Y/%m/%d")
+P5B$GETENDDay5 <- gsub("-", "/", P5B$GETENDDay5); P5B$GETENDDay5
+
+##################################################
 
 P5A$MemberDay
 P5B$MemberDay
@@ -2896,6 +2906,72 @@ P5[is.na(P5)] <- ""
 P5 <- arrange(P5, ID)
 
 write.csv(P5, "C:/Users/steven.chen01/Desktop/nestle/01/DP/Work/P5.csv", row.names = TRUE)
+
+##################################################
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 ##################################################
 
