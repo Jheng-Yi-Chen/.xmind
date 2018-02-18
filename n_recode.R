@@ -1,20 +1,14 @@
 
-##################################################
-#               nestle file recode and merging   #
-##################################################
-
-##################################################
-
 library(dplyr)
 library(stringr)
 
 ##################################################
 
-# P6A <- read.csv("C:/Users/steven.chen01/Desktop/nestle/01/DP/Work/test/#6A_2017_test.csv", header = TRUE, sep = ",", stringsAsFactors = FALSE)
-# P6B <- read.csv("C:/Users/steven.chen01/Desktop/nestle/01/DP/Work/test/#6B_2017_test.csv", header = TRUE, sep = ",", stringsAsFactors = FALSE)
+# P6A <- read.csv("#6A_2017_test.csv", header = TRUE, sep = ",", stringsAsFactors = FALSE)
+# P6B <- read.csv("#6B_2017_test.csv", header = TRUE, sep = ",", stringsAsFactors = FALSE)
 
-P6A <- read.table("C:/Users/steven.chen01/Desktop/nestle/01/DP/Work/test/#6A_2017_test.csv", header = TRUE, sep = ",", stringsAsFactors = FALSE)
-P6B <- read.table("C:/Users/steven.chen01/Desktop/nestle/01/DP/Work/test/#6B_2017_test.csv", header = TRUE, sep = ",", stringsAsFactors = FALSE)
+P6A <- read.table("#6A_2017_test.csv", header = TRUE, sep = ",", stringsAsFactors = FALSE)
+P6B <- read.table("#6B_2017_test.csv", header = TRUE, sep = ",", stringsAsFactors = FALSE)
 
 ##################################################
 
@@ -108,7 +102,6 @@ P6A$P6Q5[str_sub(string = P6A$P6Q5, start = nchar(P6A$P6Q5), end = nchar(P6A$P6Q
 P6A$P6Q5
 
 ##################################################
-# P6B$P6Q5
 
 P6B$P6Q5_11; class(P6B$P6Q5_11)
 P6B$P6Q5_11[nchar(P6B$P6Q5_11) > 0] <- "11"
@@ -135,7 +128,6 @@ P6B$P6Q5[str_sub(string = P6B$P6Q5, start = nchar(P6B$P6Q5), end = nchar(P6B$P6Q
 P6B$P6Q5
 
 ##################################################
-# P6A$P6Q12
 
 P6A$P6Q12 <- paste(P6A$P6Q12_1, P6A$P6Q12_2, P6A$P6Q12_3, P6A$P6Q12_4, P6A$P6Q12_5, P6A$P6Q12_6, P6A$P6Q12_7, P6A$P6Q12_8, P6A$P6Q12_9, P6A$P6Q12_10, P6A$P6Q12_99, sep = ",")
 P6A$P6Q12
@@ -153,7 +145,6 @@ P6A$P6Q12[str_sub(string = P6A$P6Q12, start = nchar(P6A$P6Q12), end = nchar(P6A$
 P6A$P6Q12
 
 ##################################################
-# P6B$P6Q12
 
 P6B$P6Q12 <- paste(P6B$P6Q12_1, P6B$P6Q12_2, P6B$P6Q12_3, P6B$P6Q12_4, P6B$P6Q12_5, P6B$P6Q12_6, P6B$P6Q12_7, P6B$P6Q12_8, P6B$P6Q12_9, P6B$P6Q12_10, P6B$P6Q12_99, sep = ",")
 
@@ -511,8 +502,6 @@ P6B$P6Q18[str_sub(string = P6B$P6Q18, start = nchar(P6B$P6Q18), end = nchar(P6B$
 P6B$P6Q18
 
 ##################################################
-# P6A$ID6
-# P6B$ID6
 
 P6A$ID6 <- P6A$MemberID6
 P6B$ID6 <- P6B$MemberID6
@@ -523,8 +512,6 @@ P6A$Qtype6 <- 61
 P6B$Qtype6 <- 62
 
 ##################################################
-# P6A$P6Q2
-# P6B$P6Q2
 
 table(P6A$P6Q2)
 table(P6A$P6Q2_3)
@@ -535,8 +522,6 @@ table(P6B$P6Q2_3)
 P6B$P6Q2[nchar(P6B$P6Q2_3) > 0] <- "3"; table(P6B$P6Q2)
 
 ##################################################
-# P6A$P6Q3
-# P6B$P6Q3
 
 table(P6A$P6Q3)
 table(P6A$P6Q3_3)
@@ -548,8 +533,6 @@ P6B$P6Q3[nchar(P6B$P6Q3_3) > 0] <- "3"; table(P6B$P6Q3)
 # P6B$P6Q3[98]
 
 ##################################################
-# P6A$P6Q1
-# P6B$P6Q1
 
 P6A$P6Q1_D
 P6A$P6Q1_M
@@ -560,9 +543,6 @@ P6B$P6Q1_M
 P6B$P6Q1_Y
 
 ##################################################
-# P6A$P6Q4_1
-# P6A$P6Q4_2
-# P6A$P6Q4_3
 
 # sum(P6A$P6Q4_R_1 == "1")
 
@@ -712,9 +692,6 @@ P6B$P6Q4_2[P6B$P6Q4_R_16 == "2"] <- "16"
 P6B$P6Q4_3[P6B$P6Q4_R_16 == "3"] <- "16"
 
 ##################################################
-# P6A$P6Q6_1
-# P6A$P6Q6_2
-# P6A$P6Q6_3
 
 P6A$P6Q6_1[P6A$P6Q6_R_1 == "1"] <- "1"
 P6A$P6Q6_2[P6A$P6Q6_R_1 == "2"] <- "1"
@@ -802,12 +779,6 @@ P6B$P6Q6_2[P6B$P6Q6_R_10 == "2"] <- "10"
 P6B$P6Q6_3[P6B$P6Q6_R_10 == "3"] <- "10"
 
 ##################################################
-# P6A$P6Q19_1
-# P6A$P6Q19_2
-# P6A$P6Q19_3
-# P6A$P6Q19_4
-# P6A$P6Q19_5
-# P6A$P6Q19_7
 
 P6A$P6Q19_1 <- P6A$P6Q19_Nestle
 P6A$P6Q19_2 <- P6A$P6Q19_Centrum
@@ -931,7 +902,6 @@ P6A$P6Q24_rank6[P6A$P6Q24_Snow == "6"] <- "7"
 P6A$P6Q24_rank7[P6A$P6Q24_Snow == "7"] <- "7"
 
 ##################################################
-# test
 
 P6A$P6Q24_rank1[P6A$ID6 == "1100"]
 P6A$P6Q24_rank2[P6A$ID6 == "1100"]
@@ -1510,7 +1480,7 @@ P6A <- select(P6A, -P6Q30_7)
 
 P6A[is.na(P6A)] <- ""
 
-write.csv(P6A, "C:/Users/steven.chen01/Desktop/nestle/01/DP/Work/P6A.csv", row.names = TRUE)
+write.csv(P6A, "P6A.csv", row.names = TRUE)
 str(P6A)
 
 ##################################################
@@ -1539,7 +1509,7 @@ P6B <- select(P6B, -P6Q30_7)
 
 P6B[is.na(P6B)] <- ""
 
-write.csv(P6B, "C:/Users/steven.chen01/Desktop/nestle/01/DP/Work/P6B.csv", row.names = TRUE)
+write.csv(P6B, "P6B.csv", row.names = TRUE)
 str(P6B)
 
 ##################################################
@@ -1553,7 +1523,7 @@ P6 <- union(P6A, P6B)
 P6[is.na(P6)] <- ""
 P6 <- arrange(P6, ID)
 
-write.csv(P6, "C:/Users/steven.chen01/Desktop/nestle/01/DP/Work/P6.csv", row.names = TRUE)
+write.csv(P6, "P6.csv", row.names = TRUE)
 
 # remove .x and .y
 
@@ -1564,8 +1534,8 @@ library(stringr)
 
 ##################################################
 
-P5A <- read.table("C:/Users/steven.chen01/Desktop/nestle/01/DP/Work/test/#5A_2017_test.csv", header = TRUE, sep = ",", stringsAsFactors = FALSE)
-P5B <- read.table("C:/Users/steven.chen01/Desktop/nestle/01/DP/Work/test/#5B_2017_test.csv", header = TRUE, sep = ",", stringsAsFactors = FALSE)
+P5A <- read.table("#5A_2017_test.csv", header = TRUE, sep = ",", stringsAsFactors = FALSE)
+P5B <- read.table("#5B_2017_test.csv", header = TRUE, sep = ",", stringsAsFactors = FALSE)
 
 ##################################################
 
@@ -2035,8 +2005,6 @@ P5B$P5Q3[nchar(P5B$P5Q3_3) > 0] <- "3"; table(P5B$P5Q3)
 # P5B$P5Q3[98]
 
 ##################################################
-# P5A$P5Q1
-# P5B$P5Q1
 
 P5A$P5Q1_D
 P5A$P5Q1_M
@@ -2047,9 +2015,6 @@ P5B$P5Q1_M
 P5B$P5Q1_Y
 
 ##################################################
-# P5A$P5Q4_1
-# P5A$P5Q4_2
-# P5A$P5Q4_3
 
 P5A$P5Q4_1[P5A$P5Q4_R_1 == "1"] <- "1"
 P5A$P5Q4_2[P5A$P5Q4_R_1 == "2"] <- "1"
@@ -2116,9 +2081,6 @@ P5A$P5Q4_2[P5A$P5Q4_R_16 == "2"] <- "16"
 P5A$P5Q4_3[P5A$P5Q4_R_16 == "3"] <- "16"
 
 ##################################################
-# P5B$P5Q4_1
-# P5B$P5Q4_2
-# P5B$P5Q4_3
 
 P5B$P5Q4_1[P5B$P5Q4_R_1 == "1"] <- "1"
 P5B$P5Q4_2[P5B$P5Q4_R_1 == "2"] <- "1"
@@ -2185,9 +2147,6 @@ P5B$P5Q4_2[P5B$P5Q4_R_16 == "2"] <- "16"
 P5B$P5Q4_3[P5B$P5Q4_R_16 == "3"] <- "16"
 
 ##################################################
-# P5A$P5Q6_1
-# P5A$P5Q6_2
-# P5A$P5Q6_3
 
 P5A$P5Q6_1[P5A$P5Q6_R_1 == "1"] <- "1"
 P5A$P5Q6_2[P5A$P5Q6_R_1 == "2"] <- "1"
@@ -2230,9 +2189,6 @@ P5A$P5Q6_2[P5A$P5Q6_R_10 == "2"] <- "10"
 P5A$P5Q6_3[P5A$P5Q6_R_10 == "3"] <- "10"
 
 ##################################################
-# P5B$P5Q6_1
-# P5B$P5Q6_2
-# P5B$P5Q6_3
 
 P5B$P5Q6_1[P5B$P5Q6_R_1 == "1"] <- "1"
 P5B$P5Q6_2[P5B$P5Q6_R_1 == "2"] <- "1"
@@ -2275,12 +2231,6 @@ P5B$P5Q6_2[P5B$P5Q6_R_10 == "2"] <- "10"
 P5B$P5Q6_3[P5B$P5Q6_R_10 == "3"] <- "10"
 
 ##################################################
-# P5A$P5Q19_1
-# P5A$P5Q19_2
-# P5A$P5Q19_3
-# P5A$P5Q19_4
-# P5A$P5Q19_5
-# P5A$P5Q19_7
 
 P5A$P5Q19_1 <- P5A$P5Q19_Nestle
 P5A$P5Q19_2 <- P5A$P5Q19_Centrum
@@ -2345,7 +2295,6 @@ P5A$P5Q23
 P5B$P5Q23
 
 ##################################################
-# P5A$P5Q24_rank
 
 P5A$P5Q24_rank1[P5A$P5Q24_Nestle == "1"] <- "1"
 P5A$P5Q24_rank2[P5A$P5Q24_Nestle == "2"] <- "1"
@@ -2404,7 +2353,6 @@ P5A$P5Q24_rank6[P5A$P5Q24_Snow == "6"] <- "7"
 P5A$P5Q24_rank7[P5A$P5Q24_Snow == "7"] <- "7"
 
 ##################################################
-# P5B$P5Q24_rank
 
 P5B$P5Q24_rank1[P5B$P5Q24_Nestle == "1"] <- "1"
 P5B$P5Q24_rank2[P5B$P5Q24_Nestle == "2"] <- "1"
@@ -2864,7 +2812,7 @@ P5A <- select(P5A, -P5Q30_7)
 
 P5A[is.na(P5A)] <- ""
 
-write.csv(P5A, "C:/Users/steven.chen01/Desktop/nestle/01/DP/Work/P5A.csv", row.names = TRUE)
+write.csv(P5A, "P5A.csv", row.names = TRUE)
 str(P5A)
 
 ##################################################
@@ -2893,7 +2841,7 @@ P5B <- select(P5B, -P5Q30_7)
 
 P5B[is.na(P5B)] <- ""
 
-write.csv(P5B, "C:/Users/steven.chen01/Desktop/nestle/01/DP/Work/P5B.csv", row.names = TRUE)
+write.csv(P5B, "P5B.csv", row.names = TRUE)
 str(P5B)
 
 ##################################################
@@ -2905,93 +2853,27 @@ P5 <- union(P5A, P5B)
 P5[is.na(P5)] <- ""
 P5 <- arrange(P5, ID)
 
-write.csv(P5, "C:/Users/steven.chen01/Desktop/nestle/01/DP/Work/P5.csv", row.names = TRUE)
-
-##################################################
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+write.csv(P5, "P5.csv", row.names = TRUE)
 
 ##################################################
 
 P6P5 <- full_join(P6, P5, by = "ID")
 P6P5[is.na(P6P5)] <- ""
-write.csv(P6P5, "C:/Users/steven.chen01/Desktop/nestle/01/DP/Work/P6P5.csv", row.names = TRUE)
+write.csv(P6P5, "P6P5.csv", row.names = TRUE)
 
 ##################################################
 
-P1 <- read.csv("C:/Users/steven.chen01/Desktop/nestle/test/#1_2017.csv", header=TRUE, sep=",")
+P1 <- read.csv("#1_2017.csv", header=TRUE, sep=",")
 
 ##################################################
 
-P2A <- read.csv("C:/Users/steven.chen01/Desktop/nestle/test/#2A_2017.csv", header=TRUE, sep=",")
+P2A <- read.csv("#2A_2017.csv", header=TRUE, sep=",")
 
 ##################################################
 
-P3A <- read.csv("C:/Users/steven.chen01/Desktop/nestle/test/#3A_2017.csv", header=TRUE, sep=",")
+P3A <- read.csv("#3A_2017.csv", header=TRUE, sep=",")
 
 ##################################################
 
-P4A <- read.csv("C:/Users/steven.chen01/Desktop/nestle/test/#4A_2017.csv", header=TRUE, sep=",")
-P4B <- read.csv("C:/Users/steven.chen01/Desktop/nestle/test/#4B_2017.csv", header=TRUE, sep=",")
+P4A <- read.csv("#4A_2017.csv", header=TRUE, sep=",")
+P4B <- read.csv("#4B_2017.csv", header=TRUE, sep=",")
