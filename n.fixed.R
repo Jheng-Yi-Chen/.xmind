@@ -1,15 +1,11 @@
 
-##################################################
-#               Jheng Yi Chen                    #
-##################################################
-
 library(dplyr)
 library(stringr)
 
 ##################################################
 
-P6A <- read.table("C:/Users/CJY/Desktop/#6A_2017_May_test.csv", header = TRUE, sep = ",", stringsAsFactors = FALSE)
-P6B <- read.table("C:/Users/CJY/Desktop/#6B_2017_May_test.csv", header = TRUE, sep = ",", stringsAsFactors = FALSE)
+P6A <- read.table("#6A_2017_May_test.csv", header = TRUE, sep = ",", stringsAsFactors = FALSE)
+P6B <- read.table("#6B_2017_May_test.csv", header = TRUE, sep = ",", stringsAsFactors = FALSE)
 
 ##################################################
 
@@ -130,7 +126,7 @@ P6A <- select(P6A, -P6Q3_3)
 
 P6A[is.na(P6A)] <- ""
 
-write.csv(P6A, "C:/Users/CJY/Desktop/P6A.csv", row.names = TRUE)
+write.csv(P6A, "P6A.csv", row.names = TRUE)
 str(P6A)
 
 ##################################################
@@ -139,12 +135,12 @@ library(dplyr)
 
 ##################################################
 
-P1 <- read.csv("C:/Users/CJY/Desktop/pro#1-2.csv", header=TRUE, sep=",")
-P2 <- read.csv("C:/Users/CJY/Desktop/pro#2-2.csv", header=TRUE, sep=",")
-P3 <- read.csv("C:/Users/CJY/Desktop/pro#3-2.csv", header=TRUE, sep=",")
-P4 <- read.csv("C:/Users/CJY/Desktop/pro#4-2.csv", header=TRUE, sep=",")
-P5 <- read.csv("C:/Users/CJY/Desktop/pro#5-2.csv", header=TRUE, sep=",")
-P6 <- read.csv("C:/Users/CJY/Desktop/pro#6-2.csv", header=TRUE, sep=",")
+P1 <- read.csv("pro#1-2.csv", header=TRUE, sep=",")
+P2 <- read.csv("pro#2-2.csv", header=TRUE, sep=",")
+P3 <- read.csv("pro#3-2.csv", header=TRUE, sep=",")
+P4 <- read.csv("pro#4-2.csv", header=TRUE, sep=",")
+P5 <- read.csv("pro#5-2.csv", header=TRUE, sep=",")
+P6 <- read.csv("pro#6-2.csv", header=TRUE, sep=",")
 
 ##################################################
 
@@ -184,8 +180,4 @@ final_file[is.na(final_file)] <- ""
 
 final_file <- arrange(final_file, ID)
 
-write.csv(final_file, "C:/Users/CJY/Desktop/final_file.csv", row.names = TRUE)
-
-##################################################
-
-
+write.csv(final_file, "final_file.csv", row.names = TRUE)
