@@ -6,7 +6,6 @@ library(stringr)
 
 # P6A <- read.csv("#6A_2017_test.csv", header = TRUE, sep = ",", stringsAsFactors = FALSE)
 # P6B <- read.csv("#6B_2017_test.csv", header = TRUE, sep = ",", stringsAsFactors = FALSE)
-
 P6A <- read.table("#6A_2017_test.csv", header = TRUE, sep = ",", stringsAsFactors = FALSE)
 P6B <- read.table("#6B_2017_test.csv", header = TRUE, sep = ",", stringsAsFactors = FALSE)
 
@@ -22,7 +21,6 @@ P6A <- P6A[-c(1, 2), ]
 P6B <- P6B[-c(1, 2), ]
 
 ##################################################
-# P6A$P6Q5
 
 # # P6A$P6Q5_11 <- as.numeric(as.character(P6A$P6Q5_11))
 # P6A$P6Q5_11 # 308 is "|"
@@ -40,24 +38,9 @@ P6A$P6Q5_11
 
 # where <- P6A$P6Q5_3 == "2"
 # P6A$P6Q5_3[where] <- "3"
-# 
-# where <- P6A$P6Q5_4 == "3"
-# P6A$P6Q5_4[where] <- "4"
-# 
-# where <- P6A$P6Q5_5 == "4"
-# P6A$P6Q5_5[where] <- "5"
-# 
-# where <- P6A$P6Q5_6 == "5"
-# P6A$P6Q5_6[where] <- "6"
 
 P6A$P6Q5_3[P6A$P6Q5_3 == "2"] <- "3"
 P6A$P6Q5_4[P6A$P6Q5_4 == "3"] <- "4"
-P6A$P6Q5_5[P6A$P6Q5_5 == "4"] <- "5"
-P6A$P6Q5_6[P6A$P6Q5_6 == "5"] <- "6"
-P6A$P6Q5_7[P6A$P6Q5_7 == "6"] <- "7"
-P6A$P6Q5_8[P6A$P6Q5_8 == "7"] <- "8"
-P6A$P6Q5_9[P6A$P6Q5_9 == "8"] <- "9"
-P6A$P6Q5_10[P6A$P6Q5_10 == "9"] <- "10"
 
 # for (x in P6A$P6Q5_11) {
 #   x <-  nchar(as.vector(P6A$P6Q5_11)) > 1
@@ -82,9 +65,6 @@ P6A$P6Q5 <- gsub(",,", ",", P6A$P6Q5); P6A$P6Q5 <- gsub(",,", ",", P6A$P6Q5); P6
 # P6A$P6Q5 <- gsub(",4,", "4,", P6A$P6Q5)
 # P6A$P6Q5 <- gsub(",5,", "5,", P6A$P6Q5)
 # P6A$P6Q5 <- gsub(",7,", "7,", P6A$P6Q5)
-# P6A$P6Q5 <- gsub(",0,", ",0", P6A$P6Q5)
-# P6A$P6Q5 <- gsub(",1,", ",1", P6A$P6Q5)
-# P6A$P6Q5 <- gsub(",4,", ",4", P6A$P6Q5)
 
 P6A$P6Q5; class(P6A$P6Q5)
 
@@ -108,41 +88,27 @@ P6B$P6Q5_11[nchar(P6B$P6Q5_11) > 0] <- "11"
 P6B$P6Q5_3[P6B$P6Q5_3 == "2"] <- "3"
 P6B$P6Q5_4[P6B$P6Q5_4 == "3"] <- "4"
 P6B$P6Q5_5[P6B$P6Q5_5 == "4"] <- "5"
-P6B$P6Q5_6[P6B$P6Q5_6 == "5"] <- "6"
-P6A$P6Q5_7[P6A$P6Q5_7 == "6"] <- "7"
-P6B$P6Q5_8[P6B$P6Q5_8 == "7"] <- "8"
-P6B$P6Q5_9[P6B$P6Q5_9 == "8"] <- "9"
-P6B$P6Q5_10[P6B$P6Q5_10 == "9"] <- "10"
 
 P6B$P6Q5 <- paste(P6B$P6Q5_1, P6B$P6Q5_3, P6B$P6Q5_4, P6B$P6Q5_5, P6B$P6Q5_6, P6B$P6Q5_7, P6B$P6Q5_8, P6B$P6Q5_9, P6B$P6Q5_10, P6B$P6Q5_11, sep = ",")
-P6B$P6Q5
 
 P6B$P6Q5 <- gsub(",,", ",", P6B$P6Q5); P6B$P6Q5 <- gsub(",,", ",", P6B$P6Q5); P6B$P6Q5 <- gsub(",,", ",", P6B$P6Q5); P6B$P6Q5 <- gsub(",,", ",", P6B$P6Q5); P6B$P6Q5 <- gsub(",,", ",", P6B$P6Q5); P6B$P6Q5 <- gsub(",,", ",", P6B$P6Q5)
-P6B$P6Q5
 class(P6B$P6Q5)
 
 P6B$P6Q5[str_sub(string = P6B$P6Q5, start = 1, end = 1) == ","] <- str_replace(string =  P6B$P6Q5[str_sub(string = P6B$P6Q5, start = 1, end = 1) == ","], pattern = "^\\,", replacement = "")
 P6B$P6Q5[str_sub(string = P6B$P6Q5, start = nchar(P6B$P6Q5), end = nchar(P6B$P6Q5)) == ","] <- 
   str_replace(string =  P6B$P6Q5[str_sub(string = P6B$P6Q5, start = nchar(P6B$P6Q5), end = nchar(P6B$P6Q5)) == ","], pattern = "\\,$", replacement = "")
 
-P6B$P6Q5
-
 ##################################################
 
 P6A$P6Q12 <- paste(P6A$P6Q12_1, P6A$P6Q12_2, P6A$P6Q12_3, P6A$P6Q12_4, P6A$P6Q12_5, P6A$P6Q12_6, P6A$P6Q12_7, P6A$P6Q12_8, P6A$P6Q12_9, P6A$P6Q12_10, P6A$P6Q12_99, sep = ",")
-P6A$P6Q12
+
 P6A$P6Q12 <- gsub(",,", ",", P6A$P6Q12)
 P6A$P6Q12 <- gsub(",,", ",", P6A$P6Q12)
 P6A$P6Q12 <- gsub(",,", ",", P6A$P6Q12)
-P6A$P6Q12 <- gsub(",,", ",", P6A$P6Q12)
-P6A$P6Q12 <- gsub(",,", ",", P6A$P6Q12)
-P6A$P6Q12
 
 P6A$P6Q12[str_sub(string = P6A$P6Q12, start = 1, end = 1) == ","] <- str_replace(string =  P6A$P6Q12[str_sub(string = P6A$P6Q12, start = 1, end = 1) == ","], pattern = "^\\,", replacement = "")
 P6A$P6Q12[str_sub(string = P6A$P6Q12, start = nchar(P6A$P6Q12), end = nchar(P6A$P6Q12)) == ","] <- 
   str_replace(string =  P6A$P6Q12[str_sub(string = P6A$P6Q12, start = nchar(P6A$P6Q12), end = nchar(P6A$P6Q12)) == ","], pattern = "\\,$", replacement = "")
-
-P6A$P6Q12
 
 ##################################################
 
@@ -150,19 +116,12 @@ P6B$P6Q12 <- paste(P6B$P6Q12_1, P6B$P6Q12_2, P6B$P6Q12_3, P6B$P6Q12_4, P6B$P6Q12
 
 P6B$P6Q12 <- gsub(",,", ",", P6B$P6Q12)
 P6B$P6Q12 <- gsub(",,", ",", P6B$P6Q12)
-P6B$P6Q12 <- gsub(",,", ",", P6B$P6Q12)
-P6B$P6Q12 <- gsub(",,", ",", P6B$P6Q12)
-P6B$P6Q12 <- gsub(",,", ",", P6B$P6Q12)
-P6B$P6Q12
 
 P6B$P6Q12[str_sub(string = P6B$P6Q12, start = 1, end = 1) == ","] <- str_replace(string =  P6B$P6Q12[str_sub(string = P6B$P6Q12, start = 1, end = 1) == ","], pattern = "^\\,", replacement = "")
 P6B$P6Q12[str_sub(string = P6B$P6Q12, start = nchar(P6B$P6Q12), end = nchar(P6B$P6Q12)) == ","] <- 
   str_replace(string =  P6B$P6Q12[str_sub(string = P6B$P6Q12, start = nchar(P6B$P6Q12), end = nchar(P6B$P6Q12)) == ","], pattern = "\\,$", replacement = "")
 
-P6B$P6Q12
-
 ##################################################
-# P6A$P6Q13
 
 P6A$P6Q13_99[P6A$P6Q13_99 == "1"] <- "99"
 P6A$P6Q13_1[P6A$P6Q13_1 == "2"] <- "1"
@@ -189,10 +148,7 @@ P6A$P6Q13[str_sub(string = P6A$P6Q13, start = 1, end = 1) == ","] <- str_replace
 P6A$P6Q13[str_sub(string = P6A$P6Q13, start = nchar(P6A$P6Q13), end = nchar(P6A$P6Q13)) == ","] <- 
   str_replace(string =  P6A$P6Q13[str_sub(string = P6A$P6Q13, start = nchar(P6A$P6Q13), end = nchar(P6A$P6Q13)) == ","], pattern = "\\,$", replacement = "")
 
-P6A$P6Q13
-
 ##################################################
-# P6B$P6Q13
 
 P6B$P6Q13_99[P6B$P6Q13_99 == "1"] <- "99"
 P6B$P6Q13_1[P6B$P6Q13_1 == "2"] <- "1"
