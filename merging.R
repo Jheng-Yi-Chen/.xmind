@@ -36,7 +36,6 @@ final_file <- select(final_file, -grep("X.", names(final_file)))
 final_file <- select(final_file, -grep("IF.", names(final_file)))
 
 final_file[is.na(final_file)] <- ""
-
 final_file <- arrange(final_file, ID)
 
 write.csv(final_file, "", row.names = TRUE)
@@ -74,7 +73,6 @@ class(final_DF$ID)
 # pro_6$ID6_I <- as.integer(pro_6$ID6)
 
 # left_join(df2, df1, by = c("e"="a"))
-
 final1 <- left_join(x = final_DF, y = pro_1, by = c("ID" = "ID"))
 final2 <- left_join(x = final1, y = pro_2, by = c("ID" = "ID"))
 final3 <- left_join(x = final2, y = pro_3, by = c("ID" = "ID"))
@@ -88,7 +86,6 @@ final6 <- left_join(x = final5, y = pro_6, by = c("ID" = "ID"))
 
 # final_1 <- order(final6, final6$ID_I)
 # final6[order(final6$ID_I),]
-
 final_1 <- arrange(final6, ID)
 
 # unique(final_1, nmax = 1)
