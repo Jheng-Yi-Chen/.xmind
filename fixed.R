@@ -112,9 +112,6 @@ table(P6B$P6Q31)
 
 P6A$SendDay6 <- as.Date(P6A$SendDay6, format = "%Y/%m/%d")
 # P6A$SendDay6 <- gsub("-", "/", P6A$SendDay6); P6A$SendDay6
-
-##################################################
-
 P6A$EndDay6 <- as.Date(P6A$EndDay6, format = "%m/%d/%Y")
 # P6A$EndDay6 <- gsub("-", "/", P6A$EndDay6); P6A$EndDay6
 
@@ -132,8 +129,6 @@ str(P6A)
 ##################################################
 
 library(dplyr)
-
-##################################################
 
 P1 <- read.csv("pro#1-2.csv", header=TRUE, sep=",")
 P2 <- read.csv("pro#2-2.csv", header=TRUE, sep=",")
